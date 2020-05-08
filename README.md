@@ -92,4 +92,4 @@ Check out these related projects.
   [sudipt_homepage]: https://github.com/iamsudipt
   [sudipt_avatar]: https://img.cloudposse.com/75x75/https://github.com/iamsudipt.png
   [devesh_homepage]: https://github.com/deveshs23
-  [devesh_avataar]: https://img.cloudposse.com/150x150/https://github.com/deveshs23.png
+  [devesh_avataar]: https://img.cloudposse.com/75x75/https://github.com/deveshs23.png
