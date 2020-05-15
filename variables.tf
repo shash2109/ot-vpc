@@ -17,26 +17,26 @@ variable "instance_tenancy" {
 
 variable "enable_dns_support" {
   description = "If this attribute is false, the Amazon-provided DNS server that resolves public DNS hostnames to IP addresses is not enabled."
-  type        = string
-  default     = "true"
+  type        = bool
+  default     = true
 }
 
 variable "enable_dns_hostnames" {
   description = "If this attribute is true, instances in the VPC get public DNS hostnames, but only if the enableDnsSupport attribute is also set to true."
-  type        = string
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "enable_classiclink" {
   description = "If this attribute is true, ClassicLink allows you to link EC2-Classic instances to a VPC in your account, within the same region."
-  type        = string
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "enable_classiclink_dns_support" {
   description = "If this attribute is true, the DNS hostname of a linked EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's linked."
-  type        = string
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "vpc_tags" {
