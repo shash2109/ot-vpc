@@ -32,3 +32,8 @@ variable "avaialability_zones" {
 variable "logs_bucket" {
   description = "Name of bucket where we would be storing our logs"
 }
+
+variable "pvt_zone_name" {
+  description = "Name of private zone"
+  type = string
+}

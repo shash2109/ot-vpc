@@ -12,5 +12,8 @@ output "pub_alb_dns" {
   value = module.pub_alb.dns_name
 }
 
-
+output "pvt_hosted_zone_id" {
+  description = "hosted zone id"
+  value       = aws_route53_zone.private_hosted_zone.zone_id
+}
 

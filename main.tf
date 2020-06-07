@@ -119,4 +119,10 @@ module "pub_alb" {
   tags =var.tags
 }
 
+resource "aws_route53_zone" "private_hosted_zone" {
+  name = var.pvt_zone_name
+  vpc {
+    vpc_id = aws_vpc.main.id
+  }
+}
 
