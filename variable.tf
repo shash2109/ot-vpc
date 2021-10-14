@@ -37,3 +37,42 @@ variable "pvt_zone_name" {
   description = "Name of private zone"
   type = string
 }
+
+variable "enable_dns_support" {
+  type = bool
+  default = true
+}
+
+variable "enable_dns_hostnames" {
+  type = bool
+  default = true
+}
+
+variable "instance_tenancy" {
+  type = string
+  default = "default"
+}
+
+variable "log_destination_type" {
+  type = string
+  default = "s3"
+}
+
+variable "traffic_type" {
+  type = string
+  default = "ALL"
+}
+
+variable "enable_vpc_logs" {
+  type = bool
+  default = true
+}
+
+# variable "logs_s3_bucket_name" {
+#   type = string
+# }
+
+variable "enable_alb_logging" {
+  type = bool
+  default = true
+}

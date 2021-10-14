@@ -1,14 +1,8 @@
-locals {
-  instance_tenancy = "default"
-  enable_dns_support = true
-  enable_dns_hostnames = true
-}
-
 resource "aws_vpc" "main" {
   cidr_block                       = var.cidr_block
-  instance_tenancy                 = local.instance_tenancy
-  enable_dns_support               = local.enable_dns_support
-  enable_dns_hostnames             = local.enable_dns_hostnames
+  instance_tenancy                 = var.instance_tenancy
+  enable_dns_support               = var.enable_dns_support
+  enable_dns_hostnames             = var.enable_dns_hostnames
 
   tags = merge(
     {
@@ -16,6 +10,14 @@ resource "aws_vpc" "main" {
     },
     var.tags,
   )
+}
+
+resource "aws_flow_log" "vpc_flow_logs" {
+  count = var.enable_vpc_logs == true ? 1 : 0
+  log_destination      = var.logs_bucket
+  log_destination_type = var.log_destination_type
+  traffic_type         = var.traffic_type
+  vpc_id               = aws_vpc.main.id
 }
 
 resource "aws_internet_gateway" "igw" {
@@ -117,6 +119,7 @@ module "pub_alb" {
   security_groups_id = [module.public_web_security_group.sg_id]
   subnets_id = module.PublicSubnets.ids
   tags =var.tags
+  enable_logging = var.enable_alb_logging
 }
 
 resource "aws_route53_zone" "private_hosted_zone" {
