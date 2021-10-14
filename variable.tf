@@ -72,3 +72,8 @@ variable "enable_alb_logging" {
   type = bool
   default = true
 }
+
+variable "enable_deletion_protection" {
+  type = bool
+  default = true
+}

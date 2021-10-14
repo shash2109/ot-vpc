@@ -3,3 +3,4 @@
 - [x] output variable for public route table
 - [x] output variable for private route table
 - [x] flow logs resource
+- [x] variable for alb deletion protection

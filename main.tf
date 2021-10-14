@@ -120,6 +120,7 @@ module "pub_alb" {
   subnets_id = module.PublicSubnets.ids
   tags =var.tags
   enable_logging = var.enable_alb_logging
+  enable_deletion_protection = var.enable_deletion_protection
 }
 
 resource "aws_route53_zone" "private_hosted_zone" {
