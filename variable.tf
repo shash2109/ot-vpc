@@ -68,10 +68,6 @@ variable "enable_vpc_logs" {
   default = true
 }
 
-# variable "logs_s3_bucket_name" {
-#   type = string
-# }
-
 variable "enable_alb_logging" {
   type = bool
   default = true

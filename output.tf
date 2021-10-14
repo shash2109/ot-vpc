@@ -3,6 +3,11 @@ output "vpc_id" {
   value       = aws_vpc.main.id
 }
 
+output "pub_route_table_id" {
+  description = "Public route table ID"
+  value = module.publicRouteTable.id
+}
+
 output "pvt_route_table_id" {
   description = "Private Route table ID" 
   value = module.privateRouteTable.id
