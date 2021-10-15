@@ -53,7 +53,7 @@ module "PublicSubnets" {
 
 module "nat-gateway" {
   source  = "github.com/shash2109/ot-nat.git"
-  version = "0.0.1"
+  #version = "0.0.1"
   vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = tolist(module.PublicSubnets.ids)
   route_table_id = module.privateRouteTable.id
