@@ -52,9 +52,11 @@ module "PublicSubnets" {
 }
 
 module "nat-gateway" {
-  source  = "OT-CLOUD-KIT/nat-gateway/aws"
-  version = "0.0.1"
-  subnets_for_nat_gw = module.PublicSubnets.ids
+  source  = "../nat"
+  #version = "0.0.1"
+  vpc_id = aws_vpc.main.id
+  subnets_for_nat_gw = tolist(module.PublicSubnets.ids)
+  route_table_id = module.privateRouteTable.id
   vpc_name = var.name
   tags = var.tags
 }
@@ -63,7 +65,7 @@ module "privateRouteTable" {
   source  = "OT-CLOUD-KIT/route-table/aws"
   version = "0.0.1"
   cidr = "0.0.0.0/0"
-  gateway_id  = module.nat-gateway.ngw_id
+  gateway_id  = module.nat-gateway.ngw_id1
   name        = format("%s-pvt-rtb", var.name)
   vpc_id      = aws_vpc.main.id
   tags = var.tags

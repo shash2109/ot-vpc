@@ -22,3 +22,7 @@ output "pvt_hosted_zone_id" {
   value       = aws_route53_zone.private_hosted_zone.zone_id
 }
 
+output "security_group_id" {
+  description = "security group id"
+  value = module.public_web_security_group.sg_id
+}
