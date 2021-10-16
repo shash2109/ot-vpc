@@ -8,9 +8,19 @@ output "pub_route_table_id" {
   value = module.publicRouteTable.id
 }
 
-output "pvt_route_table_id" {
-  description = "Private Route table ID" 
-  value = module.privateRouteTable.id
+output "pvt_route_table_id_aza" {
+  description = "Private Route table ID for aza" 
+  value = module.privateRouteTable_aza.id
+}
+
+output "pvt_route_table_id_azb" {
+  description = "Private Route table ID for azb" 
+  value = module.privateRouteTable_azb.id
+}
+
+output "pvt_route_table_id_aza" {
+  description = "Private Route table ID for azc" 
+  value = module.privateRouteTable_azc.id
 }
 
 output "pub_alb_dns" {
