@@ -57,7 +57,6 @@ module "nat-gateway_aza" {
   version = "0.0.1"
   vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = module.PublicSubnets.ids[0]
-  route_table_id = module.privateRouteTable_aza.id
   vpc_name = var.name
   tags = var.tags
 }
@@ -89,7 +88,6 @@ module "nat-gateway_azb" {
   version = "0.0.1"
   vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = module.PublicSubnets.ids[1]
-  route_table_id = module.privateRouteTable_azb.id
   vpc_name = var.name
   tags = var.tags
 }
@@ -121,7 +119,6 @@ module "nat-gateway_azc" {
   version = "0.0.1"
   vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = module.PublicSubnets.ids[2]
-  route_table_id = module.privateRouteTable_azc.id
   vpc_name = var.name
   tags = var.tags
 }
