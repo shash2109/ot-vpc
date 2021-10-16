@@ -55,7 +55,6 @@ module "PublicSubnets" {
 module "nat-gateway_aza" {
   source  = "OT-CLOUD-KIT/nat-gateway/aws"
   version = "0.0.1"
-  vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = module.PublicSubnets.ids[0]
   vpc_name = var.name
   tags = var.tags
@@ -86,7 +85,6 @@ module "PrivateSubnets_aza" {
 module "nat-gateway_azb" {
   source  = "OT-CLOUD-KIT/nat-gateway/aws"
   version = "0.0.1"
-  vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = module.PublicSubnets.ids[1]
   vpc_name = var.name
   tags = var.tags
@@ -117,7 +115,6 @@ module "PrivateSubnets_azb" {
 module "nat-gateway_azc" {
   source  = "OT-CLOUD-KIT/nat-gateway/aws"
   version = "0.0.1"
-  vpc_id = aws_vpc.main.id
   subnets_for_nat_gw = module.PublicSubnets.ids[2]
   vpc_name = var.name
   tags = var.tags
