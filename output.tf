@@ -18,7 +18,7 @@ output "pvt_route_table_id_azb" {
   value = module.privateRouteTable_azb.id
 }
 
-output "pvt_route_table_id_aza" {
+output "pvt_route_table_id_azc" {
   description = "Private Route table ID for azc" 
   value = module.privateRouteTable_azc.id
 }
