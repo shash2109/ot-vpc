@@ -73,10 +73,10 @@ module "privateRouteTable_aza" {
 module "PrivateSubnets_aza" {
   source  = "OT-CLOUD-KIT/subnet/aws"
   version = "0.0.1"
-  availability_zones = var.avaialability_zones[0]
+  availability_zones = element(var.avaialability_zones,0)
   name = format("%s-pvt-sn-1", var.name)
   route_table_id = module.privateRouteTable_aza.id
-  subnets_cidr = var.private_subnets_cidr[0]
+  subnets_cidr = element(var.subnets_cidr,0)
   vpc_id      = aws_vpc.main.id
   tags = var.tags
 }
@@ -103,10 +103,10 @@ module "privateRouteTable_azb" {
 module "PrivateSubnets_azb" {
   source  = "OT-CLOUD-KIT/subnet/aws"
   version = "0.0.1"
-  availability_zones = var.avaialability_zones[1]
+  availability_zones = element(var.avaialability_zones,1)
   name = format("%s-pvt-sn-2", var.name)
   route_table_id = module.privateRouteTable_azb.id
-  subnets_cidr = var.private_subnets_cidr[1]
+  subnets_cidr = element(var.private_subnets_cidr,1)
   vpc_id      = aws_vpc.main.id
   tags = var.tags
 }
@@ -133,10 +133,10 @@ module "privateRouteTable_azc" {
 module "PrivateSubnets_azc" {
   source  = "OT-CLOUD-KIT/subnet/aws"
   version = "0.0.1"
-  availability_zones = var.avaialability_zones[2]
+  availability_zones = element(var.avaialability_zones,2)
   name = format("%s-pvt-sn-3", var.name)
   route_table_id = module.privateRouteTable_azc.id
-  subnets_cidr = var.private_subnets_cidr[2]
+  subnets_cidr = element(var.private_subnets_cidr,2)
   vpc_id      = aws_vpc.main.id
   tags = var.tags
 }
